@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let's Make ERDs Fun Again !</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="graphics/favicon.ico">
+</head>
+
+<body>
+<div class="flex-container">
+    <div class="float-child" id="selectors">
+
+        <div id="footer-buttons">
+            <button class="footer-buttons" type="submit" id="submit">Generate ERD</button>
+            <div id="save-buttons">
+                <a id="download" href="#" download><button id="downloadButton">Download<br>Config File</button></a>
+                <a id="upload" href="#"><button id="uploadButton">Upload<br>Config File</button></a>
+                <button id="downloadImgButton">Download<br>Image</button>
+            </div>
+            <div id="side-buttons">
+                <button class='footer-buttons' id="plus_more_tables">Add Table</button>
+                <button class='footer-buttons' id="clear_all_tables">Clear All Tables</button>
+            </div>
+        </div>
+
+        <div id="t"></div>
+
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <script src="gojs/go.js"></script>
+
+    <div id='diagramWrapper' class="p-4 w-full">
+        <script src="gojs/Figures.js"></script>
+        <script src="gojs/ZoomSlider.js"></script>
+        <script src="gojs/lib.js" id="code" type="module"></script>
+        <div id="myDiagramDiv"></div>
+    </div>
+</div>
+</body>
+</html>
