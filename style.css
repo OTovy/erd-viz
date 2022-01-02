@@ -138,11 +138,13 @@ button:hover {
 .columnsDiv{
     display: flex;
     column-gap: 3px;
+    align-items: flex-start;
 }
 
 
-    #is_key {
-        width: 5%;
+    select {
+        width: 15%;
+        display: block;
     }
 
     input[placeholder='Column Name']{
