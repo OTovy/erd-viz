@@ -2,6 +2,8 @@
 ## Let's make ERDs <label style="color:yellow">Fun</label> again <label style="color:yellow">!</label>
 
 erd-viz-tool is a tool to help create ERD visualizations in a fast & simple manner.
+![](./ERD_Example.png)
+*(Example ERD visualization)*
 
 On the left menu you can edit your erd configuration, there are three things you can define:
 * A Table
