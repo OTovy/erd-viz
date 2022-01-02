@@ -5,7 +5,7 @@ erd-viz-tool is a tool to help create ERD visualizations in a fast & simple mann
 
 On the left menu you can edit your erd configuration, there are three things you can define:
 * A Table
-* Columns of each table (check the checkbox to set as key)
+* Columns of each table (use drop down menu to set as Primary/Foreign Key)
 * Relationship connections from each column, to any column on any table
 
 **<u>THE STEPS:</u>**
