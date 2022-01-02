@@ -78,12 +78,21 @@ plus_more_tables.onclick = function(){
 		let columnIndex = index + '_' + y.toString();
 		let newDiv = document.createElement("div");
 		let newInput = document.createElement('input');
-		let newCheckbox = document.createElement('input');
+		let newSelect = document.createElement('select');
+			newSelect.setAttribute('name', 'column_type');
+			newSelect.setAttribute('id', 'column_type_' + columnIndex);
 
-			newCheckbox.setAttribute('type', 'checkbox');
-			newCheckbox.setAttribute('id', 'is_key');
-			newCheckbox.setAttribute('class', 'is_key_' + columnIndex);
-			newCheckbox.setAttribute('title', 'Set as a Table Key');
+		let newOption1 = document.createElement('option');
+			newOption1.setAttribute('value','');
+			newOption1.innerHTML = '';
+
+		let newOption2 = document.createElement('option');
+			newOption2.setAttribute('value','PK');
+			newOption2.innerHTML = 'Primary Key';
+
+		let newOption3 = document.createElement('option');
+			newOption3.setAttribute('value','FK');
+			newOption3.innerHTML = 'Foreign Key';
 
 		let newRemoveButton = document.createElement('button')
 		let parentTable = columnsDiv
@@ -162,7 +171,11 @@ plus_more_tables.onclick = function(){
 		}
 		relationsDiv.appendChild(newRelationButton)
 
-		newDiv.appendChild(newCheckbox);
+		newSelect.appendChild(newOption1);
+		newSelect.appendChild(newOption2);
+		newSelect.appendChild(newOption3);
+
+		newDiv.appendChild(newSelect);
 		newDiv.appendChild(newInput);
 		newDiv.appendChild(newRemoveButton);
 		newDiv.appendChild(relationsDiv);
@@ -210,9 +223,12 @@ submit_form.onclick = function() {
 		let columnItems = [];
 		for (let column of columnDivs) {
 			column.children[0].nodeValue
+			let columnColor = "black";
 			let columnFigure = "LineH";
-			if (column.firstChild.checked === true) { columnFigure = 'Key' }
-			let columnItem = {name:column.children['1'].value, info: '', color: 'black', figure: columnFigure};
+
+			if (column.firstChild.value === 'PK') { columnFigure = 'Key'; columnColor = 'darkorange'}
+			if (column.firstChild.value === 'FK') { columnFigure = 'Key'; columnColor = 'grey'}
+			let columnItem = {name:column.children['1'].value, info: '', color: columnColor, figure: columnFigure};
 			columnItems.push(columnItem);
 
 			let relationDivs = column.querySelectorAll("[id^='relations_']");
@@ -318,7 +334,8 @@ let formFromObject = function (nodesObject, relationItemsObject){
 			tableDiv.children[2].firstChild.click()
 			let columnDiv = tableDiv.children[2].children[tableDiv.children[2].childElementCount-1]
 			let columnName = f['name']
-			if (f['figure']==='Key') {columnDiv.firstChild.checked = true}
+			if (f['color']==='darkorange') {columnDiv.firstChild.value = 'PK'}
+			if (f['color']==='grey') {columnDiv.firstChild.value = 'FK'}
 			columnDiv.children[1].value = columnName;
 
 			for (let r of relationItemsObject){
