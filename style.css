@@ -32,11 +32,12 @@ html, body {
 
 #footer-buttons{
     height: 28%;
+    overflow: hidden;
 }
 
 #t {
     height: 72%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 
