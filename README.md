@@ -30,7 +30,7 @@ Download Image - creates a jpeg file of your ERD visualization.
 Contact [Ofer Tovy](https://www.linkedin.com/in/ofer-tovy-b34aa5128) for any questions.
 
 
-- [The App](https://otovy.github.io/erd-viz/index.html#)
+- [The App](https://otovy.github.io/erd-viz/)
 - [Git](https://github.com/OTovy/erd-viz)
 
 Have Fun ![](./graphics/favicon.ico)
