@@ -6,11 +6,11 @@ html, body {
 #topDiv {
     height: 2%;
     text-align: center;
-    backgroud: #3D3D3D;
+    backgroud-color: #3D3D3D;
 }
 
 #topA {
-    backgroud: #3D3D3D;
+    backgroud-color: #3D3D3D;
     color: lightgray;
 }
 
